@@ -9,7 +9,7 @@ export default function Home() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [timer, setTimer] = useState(false);
-  const seconds = 5
+  const seconds = 1500
   const [time, setTime] = useState(seconds); // Initial time in seconds
 
   useEffect(() => {

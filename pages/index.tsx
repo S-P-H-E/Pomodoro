@@ -16,16 +16,14 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const currentTheme = theme === 'system' ? null : theme;
-    localStorage.setItem('theme', currentTheme);
-  }, [theme]);
-
-  useEffect(() => {
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) {
-      setTheme(storedTheme);
+    let currentTheme = theme === 'system' ? null : theme;
+    if (typeof currentTheme === 'string') {
+      localStorage.setItem('theme', currentTheme);
+    } else {
+      localStorage.setItem('theme', '');
     }
-  }, []);
+  }, [theme]);
+  
 
   useEffect(() => {
     let intervalId: any = null;

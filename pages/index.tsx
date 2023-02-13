@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { BsSunFill } from 'react-icons/bs';
 import { BsFillMoonFill } from 'react-icons/bs';
+import Head from "next/head";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
@@ -42,7 +43,14 @@ export default function Home() {
   const currentTheme = theme === 'system' ? null : theme;
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <>
+      <Head>
+        <title>Pomodoro</title>
+        <meta name="description" content="Stay productive and keep track of your tasks." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className="flex justify-center items-center h-screen">
       <div>
         <div className="flex justify-center">
           {currentTheme === 'dark' ? (
@@ -101,6 +109,7 @@ export default function Home() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

@@ -86,7 +86,7 @@ export default function Home() {
                 <div className="flex justify-between items-center">
                   <h1 className="font-medium text-xl">Pomodoro 🍅</h1>
                   <div>
-                    <BsSunFill className="text-[#bfbfbf] cursor-pointer" onClick={() => setTheme('dark')} />
+                    <BsFillMoonFill className="text-[#bfbfbf] cursor-pointer" onClick={() => setTheme('dark')} />
                   </div>
                 </div>
                 <div className="h-[1px] bg-[#bfbfbf] my-4" />
